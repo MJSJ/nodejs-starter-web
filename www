@@ -1,0 +1,5 @@
+require('@mjsj/node-web');
+
+CA.init({
+    port: 8000
+});
