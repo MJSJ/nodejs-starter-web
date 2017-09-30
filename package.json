@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@mjsj/node-web": "git+ssh://git@gitlab.com/MJSJ/mjsj-node-web.git"
+  },
+  "devDependencies": {
+    "koa-webpack-middleware": "^1.0.7",
+    "webpack": "^3.0.0"
   }
 }
