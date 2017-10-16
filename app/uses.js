@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const { devMiddleware, hotMiddleware } = require('koa-webpack-middleware');
 const conf = require('../build/webpack.config');
-
 const compile = webpack(conf);
 
 CA.use(devMiddleware(compile, {
@@ -34,4 +33,8 @@ CA.use(devMiddleware(compile, {
     }
 }));
 
-CA.use(hotMiddleware(compile));
+CA.use(hotMiddleware(compile, {
+    // log: console.log,
+    // path: '/__webpack_hmr',
+    // heartbeat: 10 * 1000
+}));

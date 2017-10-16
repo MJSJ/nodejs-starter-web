@@ -1,7 +1,5 @@
-CA.get('/', async function (ctx) {
-    ctx.body = '321';
-});
+const render = require('../service/renderService');
 
-CA.get('/help', async function (ctx) {
-    ctx.body = 'help';
+CA.get('/', async function (ctx) {
+    ctx.body = render(ctx);
 });
