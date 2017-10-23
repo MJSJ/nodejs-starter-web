@@ -1,4 +1,12 @@
+const sources = require('../dist/manifest.json');
+// const sources = [];
+
 module.exports = function (ctx) {
+    let scripts = '';
+    for(s in sources){
+        scripts += `<script src=${sources[s]}></script>`
+    }
+
     ctx.response.type = 'text/html';
     return `
     <!DOCTYPE html>
@@ -10,7 +18,8 @@ module.exports = function (ctx) {
         <title>Document</title>
     </head>
     <body>
-        <script src='./app.js'></script>
+        <div id="app"></div>
+        ${scripts}
     </body>
     </html>
     `
